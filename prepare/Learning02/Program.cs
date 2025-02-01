@@ -1,11 +1,25 @@
 using System;
+<<<<<<< HEAD
 using System.Numerics;
 
+=======
+using System.Threading.Tasks.Dataflow;
+using Microsoft.Win32.SafeHandles;
+>>>>>>> e3867d9902c1644aec366c254aaf1bd25ed84363
 
 class Program
 {
+    static void DisplayMenu()
+    {
+        Console.WriteLine("Menus:");
+        Console.WriteLine("1. Add new job: ");
+        Console.WriteLine("2. Display Reume: ");
+        Console.WriteLine("3. Quit");
+        Console.WriteLine();
+    }
     static void Main(string[] args)
     {
+<<<<<<< HEAD
         Job job = new Job();
         job._company = "BYU Idaho";
         job._jobTitle = "Student";
@@ -39,5 +53,44 @@ class Program
     static void DisplayResume(Resume aResume)
     {
         Console.WriteLine($"\n Name: {aResume._name} \n Jobs: \n {aResume._jobs}");
+=======
+        Resume theResume 
+        bool keepRunning = true;
+
+        while(keepRunning)
+        {
+            DisplayMenu();
+
+            Console.WriteLine("Enter choice: ");
+            string choice = Console.ReadLine();
+
+            if (choice == "1")
+            {
+                // Add a new job
+                Console.Write("What is the name of the company?");
+                string company = Console.ReadLine();
+
+                Console.Write("What is the position? ");
+                string position = Console.ReadLine();
+
+                Job newJob = new Job();
+                newJob._company = company;
+            }
+            else if (choice == "2")
+            {
+                // Display Resume
+            }
+            else if (choice == "3")
+            {
+                // Quit
+                keepRunning = false;
+            }
+            else
+            {
+                //unexpected input
+                Console.WriteLine("Sorry, that is not valid. Please try again.");
+            }
+        }
+>>>>>>> e3867d9902c1644aec366c254aaf1bd25ed84363
     }
 }
