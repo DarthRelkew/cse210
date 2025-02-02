@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 public class Entry
 {
-    private List<string> journalEntries = new List<string>(); // Stores entries in memory
+    private List<string> journalEntries = new List<string>(); // This stores the entires as a list so I can pull them later
 
-    public void GenerateJournalEntries()
+    public void GenerateJournalEntries() //Named like this so they can be pulled later
     {
         Random random = new Random();
         string[] prompts = {
@@ -27,6 +27,7 @@ public class Entry
             "What are your top three priorities in life right now?"
         };
 
+        // These are list methods to sorts the entries and responses to the entries
         int index = random.Next(prompts.Length);
         string selectedPrompt = prompts[index];
 
@@ -38,7 +39,7 @@ public class Entry
         Console.WriteLine("Entry added to journal but not yet saved.");
     }
 
-    public void DisplayJournal()
+    public void DisplayJournal() //display loop
     {
         if (journalEntries.Count == 0)
         {
@@ -53,7 +54,7 @@ public class Entry
         }
     }
 
-    public void SaveJournal()
+    public void SaveJournal() // way to save the journal
     {
         if (journalEntries.Count == 0)
         {
@@ -73,17 +74,17 @@ public class Entry
         }
 
         Console.WriteLine($"Journal saved successfully to {fileName}!");
-        journalEntries.Clear(); // Clear memory after saving
+        journalEntries.Clear(); 
     }
 
-    public void LoadJournal()
+    public void LoadJournal() //loop to save the journal
     {
         Console.Write("Enter file name to load: ");
         string fileName = Console.ReadLine();
 
         if (File.Exists(fileName))
         {
-            journalEntries.Clear(); // Clear current entries before loading new ones
+            journalEntries.Clear(); 
             string[] loadedEntries = File.ReadAllLines(fileName);
 
             journalEntries.AddRange(loadedEntries);
@@ -96,7 +97,7 @@ public class Entry
     }
 }
 
-public class Journal
+public class Journal // Main loop to 
 {
     public static void Main()
     {
@@ -136,7 +137,7 @@ public class Journal
             }
             else if (response == 5)
             {
-                Console.WriteLine("Goodbye!");
+                Console.WriteLine("Thank you have a good day!");
                 break;
             }
             else
