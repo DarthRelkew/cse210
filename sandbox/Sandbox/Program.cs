@@ -1,30 +1,17 @@
-using System;
-using System.Numerics;
+using System.Runtime.Serialization;
 
 class Program
 {
     static void Main(string[] args)
     {
-      Movie favoriteMovie = new Movie();
-      favoriteMovie._title = "Star Wars"; //the dot allows you to access the the box in the class
-      favoriteMovie._year = 1977;
-      favoriteMovie._runtime = 150;
-      favoriteMovie._rating = "PG";
+      Book b1 = new Book("Jurassic Park","Micheal Crichton");
+      Book b2 = new Book("Tom Sawyer","Mark Twain");
+      
 
-      Movie otherFavoriteMovie = new Movie();
-      otherFavoriteMovie._title = "Avatar";
-      otherFavoriteMovie._year = 2009;
-      otherFavoriteMovie._rating = "PG-13";
-      otherFavoriteMovie._runtime = 162;
+      b1.CheckOut();
 
-      favoriteMovie.Display();
+      b1.Display();
+      b2.Display();
 
-      DisplayMovie(favoriteMovie);
-      DisplayMovie(otherFavoriteMovie);
-    }
-
-    static void DisplayMovie(Movie aMovie)
-    {
-        Console.WriteLine($"{aMovie._title} - {aMovie._year}");
     }
 }
