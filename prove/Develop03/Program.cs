@@ -7,7 +7,8 @@ class Program
     {
         ScriptureLibrary library = new ScriptureLibrary();
 
-        library.AddScripture(new Reference("John", 3, 16), "For God so loved the world...");
+        library.AddScripture(new Reference("John", 3, 16), "For God so loved the world that he gave his only begotten son.");
+        library.AddScripture(new Reference("1st Nephi", 3, 7), "And .");
         
         
         while (true)
