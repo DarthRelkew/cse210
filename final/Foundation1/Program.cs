@@ -4,8 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        video video = new video("FNAF Security Breach","Markiplier",40);
-        video.displayVideo()
+        Video video = new Video("FNAF Security Breach","Markiplier",40);
+        video.displayVideo();
         
     }
 }

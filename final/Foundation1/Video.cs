@@ -1,4 +1,4 @@
-public class video
+public class Video
 {
     public string _title;
     public string _author;
@@ -6,28 +6,29 @@ public class video
     
     public List<comment> comments = new List<comment>();
 
-    public int countComment()
+    public int CountComment()
     {
-        return comments.count;
+        return comments.Count;
     }
 
-    public video(string title, string author,int length)
+    public Video(string title, string author,int length)
     {
         _title = title;
         _author = author;
         _length = length;
     }
-    public displayVideo()
+    public void displayVideo()
     {
         Console.WriteLine(_title);
         Console.WriteLine(_author);
         Console.WriteLine(_length);
-        Console.WriteLine(countComment);
+        Console.WriteLine(CountComment());
         
-        for (int counter = 0; counter < countComment;counter ++)
+        for (int counter = 0; counter < CountComment() ;counter ++)
         {
             Console.WriteLine(comments[counter]);
         }
+
     }
 
 }
