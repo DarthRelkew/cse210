@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello Foundation1 World!");
+        video video = new video("FNAF Security Breach","Markiplier",40);
+        video.displayVideo()
+        
     }
 }
